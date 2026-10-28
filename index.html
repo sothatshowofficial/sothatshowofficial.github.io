@@ -918,7 +918,15 @@ html.book .prompt{background:rgba(17,27,68,.55);backdrop-filter:blur(14px) satur
     document.querySelectorAll('[data-buy]').forEach(function(a){a.href=BUY;a.target='_blank';a.rel='noopener';a.setAttribute('data-umami-event','buy');a.setAttribute('data-umami-event-src',src||'none')});
     document.querySelectorAll('[data-price]').forEach(function(e){e.innerHTML='<s>$'+CONFIG.was+'</s> $'+CONFIG.price});
     /* Umami (cookie-free visit counter, live site only): one 'visit' event per page view, tagged with the source */
-    addEventListener('load',function(){try{if(window.umami)umami.track('visit',{src:src||'none'})}catch(e){}})})();
+    addEventListener('load',function(){try{if(window.umami)umami.track('visit',{src:src||'none'})}catch(e){}})
+    /* how far people get: 'scroll' 25/50/75/100 % and 'reach' for key sections, each once per page view */
+    var T=function(n,d){try{if(window.umami)umami.track(n,Object.assign({src:src||'none'},d))}catch(e){}};
+    var marks=[25,50,75,100],sent={};
+    addEventListener('scroll',function(){var h=document.documentElement,max=h.scrollHeight-innerHeight;if(max<=0)return;
+      var pct=Math.round(scrollY/max*100);marks.forEach(function(m){if(pct>=m&&!sent[m]){sent[m]=1;T('scroll',{pct:String(m)})}})},{passive:true});
+    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);T('reach',{sec:e.target.id})}})},{threshold:0.3});
+      ['proof','needs','peek','compare','buy','faq','final'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})}
+  })();
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var D=document,$=function(s,r){return (r||D).querySelector(s)},$$=function(s,r){return [].slice.call((r||D).querySelectorAll(s))};
   D.documentElement.classList.add('js');
