@@ -524,7 +524,10 @@ footer .logo .y{color:var(--yellow)}
   .pbar{position:fixed;z-index:70;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));background:color-mix(in srgb,var(--navy) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
   .pbar.on{transform:none}
   .pbar .btn{flex:1;justify-content:center;min-height:50px;font-size:16px}
-  @media (max-width:374px){.pbar>span{display:none!important}.pbar .btn{white-space:nowrap}}
+  @media (max-width:374px){.pbar .btn{white-space:nowrap}}
+  /* phones: the button (with the old + new price) fills the width, the small text sits under it on one line (it was pushed off screen) */
+  .pbar .sp{display:none}
+  @media (max-width:480px){.pbar{flex-wrap:wrap;row-gap:5px;padding-top:8px}.pbar .btn{flex-basis:100%}.pbar>span{flex-basis:100%;width:100%;text-align:center;font-size:11.5px;line-height:1.2}.pbar>span br{display:none}.pbar .sp{display:inline}}
   .pbar>span{flex:none;font:500 12px/1.35 var(--sans);color:var(--on-navy-mute)}
   footer{padding-bottom:80px}
 }
@@ -899,7 +902,7 @@ html.book .prompt{background:rgba(17,27,68,.55);backdrop-filter:blur(14px) satur
   </div>
 </footer>
 
-<div class="pbar" id="pbar"><a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook <span class="pr" data-price></span></a><span>One payment<br>Needs Claude Pro</span></div>
+<div class="pbar" id="pbar"><a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook <span class="pr" data-price></span></a><span>One payment<span class="sp"> · </span><br>Needs Claude Pro</span></div>
 <a class="sticker" id="sticker" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook" aria-label="Get the Playbook">
   <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="circ" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs><text><textPath href="#circ" textLength="231" lengthAdjust="spacingAndGlyphs">GET THE PLAYBOOK · GET THE PLAYBOOK · </textPath></text></svg>
   <span class="core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
