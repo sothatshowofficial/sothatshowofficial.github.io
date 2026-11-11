@@ -569,6 +569,8 @@ html.book .prompt{background:rgba(17,27,68,.55);backdrop-filter:blur(14px) satur
   .cov{display:none}
 }
 .peek .wrap>*{min-width:0}
+/* 11 Nov test: ONE buy button after the proof reels (~30% of the page) + one at the end, no price anywhere */
+header .btn,.hero .cta,.pbar,.sticker,#buy{display:none!important}
 </style>
 </head>
 <body>
@@ -578,9 +580,9 @@ html.book .prompt{background:rgba(17,27,68,.55);backdrop-filter:blur(14px) satur
   <div class="wrap">
     <a class="logo" href="#hero"><img src="data:image/webp;base64,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" alt="">So. That's. <span class="y">How</span></a>
     <nav class="nav" aria-label="Sections">
-      <a href="#how">How it works</a><a href="#proof">Proof</a><a href="#peek">Inside</a><a href="#buy">Price</a><a href="#faq">FAQ</a>
+      <a href="#how">How it works</a><a href="#proof">Proof</a><a href="#peek">Inside</a><a href="#faq">FAQ</a>
     </nav>
-    <a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook <span class="pr" data-price></span></a>
+    <a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook</a>
   </div>
   <div class="prog" id="prog"></div>
 </header>
@@ -597,7 +599,7 @@ html.book .prompt{background:rgba(17,27,68,.55);backdrop-filter:blur(14px) satur
     </div>
     <div class="hb">
       <div class="cta">
-        <a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook <span class="pr" data-price></span>
+        <a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <div class="tag">One payment · free updates<b>Works with Claude Pro</b></div>
       </div>
@@ -626,7 +628,7 @@ html.book .prompt{background:rgba(17,27,68,.55);backdrop-filter:blur(14px) satur
 </section>
 
 <div class="ticker" aria-hidden="true"><div class="row" id="tick">
-  <span><em>8.3M</em> views on one reel</span><span>64,151 new followers from it</span><span>11.5M views on 15 reels posted over two weeks</span><span>No 3D skills</span><span>No editing software</span><span>No camera</span><span>One payment</span><span>Free updates</span>
+  <span><em>8.3M</em> views on one reel</span><span>64,151 new followers from it</span><span>11.5M views on 15 reels posted over two weeks</span><span>No 3D skills</span><span>No editing software</span><span>No camera</span><span>Free updates</span>
 </div></div>
 
 <!-- HOW -->
@@ -677,7 +679,7 @@ html.book .prompt{background:rgba(17,27,68,.55);backdrop-filter:blur(14px) satur
   </div>
   <div class="rail" style="margin-top:56px" aria-label="Reels made with this method"><div class="row" id="reels"></div></div>
   <div class="wrap"><p class="note">Swipe the reels. Tap one to watch it on Instagram. Views and follows are from Instagram, as of 25 Oct 2026 (the guide adds TikTok views, so its numbers are higher). The guide teaches you how to make the videos. Nobody can promise you views.</p></div>
-  <div class="wrap"><div class="mid-cta rv"><a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook <span class="pr" data-price></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="small">One payment · instant download · needs Claude Pro</span></div></div>
+  <div class="wrap"><div class="mid-cta rv"><a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="small">Instant download · needs Claude Pro</span></div></div>
 </section>
 
 <!-- NEEDS (moved up: skimmers learn it before the first mid buy button) -->
@@ -792,7 +794,6 @@ html.book .prompt{background:rgba(17,27,68,.55);backdrop-filter:blur(14px) satur
       </div>
     </div>
   </div>
-  <div class="band" style="padding-bottom:clamp(56px,8vw,96px)"><div class="wrap"><div class="mid-cta rv"><a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook <span class="pr" data-price></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="small">One payment · instant download · needs Claude Pro</span></div></div></div>
 </section>
 
 <!-- NEEDS -->
@@ -877,8 +878,8 @@ html.book .prompt{background:rgba(17,27,68,.55);backdrop-filter:blur(14px) satur
   <div class="wrap">
     <div class="eyebrow" style="color:var(--on-navy-mute)">So. That's. How</div>
     <h2 style="margin-top:18px">Your first 3D reel <span class="it" style="color:var(--yellow)">starts here.</span></h2>
-    <p class="lead">50 pages. One payment. You send the messages, and Claude builds the 3D.</p>
-    <a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook <span class="pr" data-price></span></a>
+    <p class="lead">50 pages. You send the messages, and Claude builds the 3D.</p>
+    <a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook</a>
     <p class="pay">Secure checkout by Gumroad. We never see or store your card details. Gumroad is our reseller and Merchant of Record: it handles payment, receipts and taxes, and your download arrives instantly.</p>
     <div class="signoff" id="signoff" aria-label="So. That's. How"><span>So.</span><span>That's.</span><span class="hw">How</span></div>
   </div>
@@ -902,7 +903,7 @@ html.book .prompt{background:rgba(17,27,68,.55);backdrop-filter:blur(14px) satur
   </div>
 </footer>
 
-<div class="pbar" id="pbar"><a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook <span class="pr" data-price></span></a><span>One payment<span class="sp"> · </span><br>Needs Claude Pro</span></div>
+<div class="pbar" id="pbar"><a class="btn" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook">Get the Playbook</a><span>One payment<span class="sp"> · </span><br>Needs Claude Pro</span></div>
 <a class="sticker" id="sticker" data-buy href="https://sothatshow.gumroad.com/l/3d-reel-playbook" aria-label="Get the Playbook">
   <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="circ" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs><text><textPath href="#circ" textLength="231" lengthAdjust="spacingAndGlyphs">GET THE PLAYBOOK · GET THE PLAYBOOK · </textPath></text></svg>
   <span class="core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
